@@ -1,0 +1,116 @@
+*{
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+    font-family: "Oswald", sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    background-color: #121212;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    color: whitesmoke;
+    background-color: #1C1C1C;
+    width: 60vw;
+    height: 15vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    }
+
+p{
+    color: #AAAAAA;
+    background-color: #1C1C1C;
+    border-radius: 30px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 80vw;
+    height: 20vh;
+    margin: 25px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+p:hover{
+    box-shadow: 0 6px 20px #AAAAAA;
+    transform: translateY(-4px);
+}
+
+#paragraphContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vh;
+    height: 60vh;
+    margin-top: 5vh;
+}
+img{
+    width: 15%;
+    height: 15%;
+    margin: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+img:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px #AAAAAA;
+}
+#buttonContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 30vh;
+    height: 10vh;
+}
+button {
+    background-color: #1C1C1C;
+    color: #AAAAAA;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 5px;
+}
+table{
+    color: #AAAAAA;
+    border: 2px solid #2a2a2a;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30vw;
+    height: 50vh;
+    margin: 40px;
+}
+input{
+    background-color: #1C1C1C;
+    margin: 10px;
+    color: #AAAAAA;
+    height: 10%;
+    width: 100%;
+    border:none;
+    padding: 5px
+}
+textarea{
+    height: 30%;
+    width: 100%;
+    background-color: #1C1C1C;
+    color: #AAAAAA;
+    border: none;
+    margin: 10px;
+    padding: 5px;
+}
+form > button{
+    height: 10%;
+    width: 50%;
+}
