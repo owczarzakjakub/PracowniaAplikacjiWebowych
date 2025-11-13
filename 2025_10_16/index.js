@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 app.get('/jsonFile', (req, res) => {
     const obj = {'json' : 'file'};
-    res.send(JSON.stringify(obj));
+    res.status(200).json(obj);
 })
 
 app.get('/nodeHtmlFile', (req, res) => {
