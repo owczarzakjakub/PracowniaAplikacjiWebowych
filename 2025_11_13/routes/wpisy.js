@@ -41,7 +41,7 @@ router.get('/', async (req, res, next) => {
 //READ (ID)
 router.get('/:id', async (req, res, next) => {
   try{
-    const id = req.params.id;
+    const id = Number(req.params.id);
     const wpisPoID = prisma.wpis.findUnique({where: {id: id}})
     if(!wpisPoID){
       res.status(404).json({error: "Wpis o podanym ID nie istnieje"})
@@ -54,5 +54,47 @@ router.get('/:id', async (req, res, next) => {
 
 //UPDATE
 
+router.put('/:id', async (req, res, next) => {
+  try{
+    const id = Number(req.params.id)
+    const {tytul, tresc, kategoria} = req.body;
+    if(!tytul || !tresc || !kategoria){
+      res.status(400).json({error: "Pola tytul tresc i kategoria sa wymagane"});
+    }
+
+    const wpisID = prisma.Wpis.findUnique({where: {id: id}})
+    if(!wpisID){
+      res.status(400).json({error: "Wpis o podanym ID nie istnieje"});
+    }
+
+    const updatedWpis = prisma.Wpis.update({
+      where: {id: id},
+      data: {tytul: tytul, tresc: tresc, kategoria: kategoria,}
+    })
+
+    res.status(201).json(updatedWpis);
+  }
+  catch(err){
+    next(err)
+  }
+})
+
 //DELETE
 
+router.delete('/:id', async (req, res, next) => {
+  try{
+    const id = Number(req.params.id);
+
+    const wpisID = prisma.Wpisy.findUnique({where: {id: id}})
+    if(!wpisID){
+      res.status(400).json({error: "Wpis o podanym ID nie istnieje"})
+    }
+
+    const deletedWpis = prisma.Wpis.delete({where: {id: id}});
+
+    res.status(200).json(deletedWpis);
+  }
+  catch(err){
+    next(err)
+  }
+})
