@@ -13,7 +13,7 @@ app.use('/routes/wpisy', WpisyRouter);
 app.use('/routes/komentarze', KomentarzeRouter);
 app.use('/routes/kategorie', KategorieRouter);
 
-app.use((err, res, req, next) => {
+app.use((err, req, res, next) => {
   console.log(err);
   res.status(err.status || 500).json({error: err.message || 'Server error'})
 });
