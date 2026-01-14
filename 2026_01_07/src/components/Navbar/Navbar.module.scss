@@ -14,13 +14,14 @@
     text-decoration: none;
     color: honeydew;
     margin: 20px;
-    transition: box-shadow 1s ease, tranform 1s ease;
+    padding: 7px;
+    transition: box-shadow 1s ease, background-color 1s ease;
+    border-radius: 10px;
+    font-size: 20px;
   }
   a:hover{
     box-shadow:dimgray 0 6px 20px;
-    transform: translateY(-5px);
-    padding: 10px;
-    border-radius: 10px;
+    background-color: dimgray;
   }
 
 }
