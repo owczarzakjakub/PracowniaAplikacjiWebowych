@@ -1,11 +1,14 @@
 import './App.scss'
 import Navbar from './components/Navbar/Navbar.tsx'
+import {BrowserRouter} from "react-router";
 
 function App() {
 
   return (
     <>
-        <Navbar />
+        <BrowserRouter>
+            <Navbar />
+        </BrowserRouter>
     </>
   )
 }

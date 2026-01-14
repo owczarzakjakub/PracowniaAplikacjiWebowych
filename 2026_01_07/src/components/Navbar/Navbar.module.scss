@@ -8,15 +8,19 @@
   justify-content: center;
   background-color: #1C1C1C;
   padding: 10px;
-  border-radius: 10px;
-  ul{
-    list-style: none;
-    text-align: center;
-    li{
-      a{
-        text-decoration: none;
-        color: white;
-      }
-    }
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  a{
+    text-decoration: none;
+    color: honeydew;
+    margin: 20px;
+    transition: box-shadow 1s ease, tranform 1s ease;
   }
+  a:hover{
+    box-shadow:dimgray 0 6px 20px;
+    transform: translateY(-5px);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
 }
