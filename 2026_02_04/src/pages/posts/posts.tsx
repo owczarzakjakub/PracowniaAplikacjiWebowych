@@ -21,7 +21,7 @@ export default function Posts(){
     })
 
     return(
-        <div>
+        <div className={styles.posts}>
             {isLoading && (
                 <>Trwa ladowanie...</>
             )}
@@ -33,20 +33,23 @@ export default function Posts(){
                     {posts.length > 0 && (
                         <>
                             {posts.map(Post => (
-                                <div key={Post.id}>
-                                    <h5>
+                                <div key={Post.id} className={styles.postsPost}>
+                                    <h5 className={styles.postsTitle}>
                                         {Post.title}
                                     </h5>
-                                    <p>
+                                    <p className={styles.postsBody}>
                                         {Post.body.substring(0, 50)};
                                     </p>
-                                    <Link
+                                    <Link className={styles.postsLink}
                                         to={`posts/Post/${Post.id}`}
                                     >Przejdz do wpisu
                                     </Link>
                                 </div>
                             ))}
                         </>
+                    )}
+                    {posts.length == 0 && (
+                        <>Brak postow</>
                     )}
                 </>
             )}
